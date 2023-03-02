@@ -2,6 +2,8 @@
 #define FARM_H
 
 #include "task.h"
+#include <queue>
+#include <mutex>
 
 // FIXME - You will need to add #includes here (probably <mutex> at least)
 
@@ -22,6 +24,8 @@ public:
 
 private:
 	// FIXME - You will need to add private member variables here
+	std::queue<Task*> taskQueue;
+	std::mutex coolMutex;
 };
 
 #endif

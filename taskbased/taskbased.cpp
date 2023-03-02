@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <thread>
 
 #include "farm.h"
 #include "task.h"
@@ -14,6 +15,8 @@ using std::to_string;
 
 int main(int argc, char *argv[])
 {
+	std::cout << "number of cores: " << std::thread::hardware_concurrency() << std::endl;
+	
 	// Example: create and run a single task
 	Task *t = new MessageTask("hello, world!");
 	cout << "Running one task...\n";
